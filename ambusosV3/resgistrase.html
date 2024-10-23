@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - AMBUSOS</title>
+    <link rel="stylesheet" href="./css/formularios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- Header y navegación -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="./index.html"> <img src="./img/logo_2.png" width="300px"></a>
+            </div>
+            <nav>
+                <a href="./index.html">Inicio</a>
+                <a href="./mapa_de_usuario.html">Mapa</a>
+                <a href="./apartados_ambu.html">Otros</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulario de registro -->
+    <div class="container">
+        <div class="form_area">
+            <h2 class="title">Registrarse</h2>
+            <form id="registerForm" action="./php/registrarse.php" method="POST">
+                <div class="form_group">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" name="username" id="username" class="form_style" placeholder="Ingresa tu nombre de usuario" required>
+                </div>
+                <div class="form_group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form_style" placeholder="Ingresa tu email" required>
+                </div>
+                <div class="form_group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" class="form_style" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="form_group">
+                    <label for="confirm_password">Confirmar Contraseña</label>
+                    <input type="password" name="confirm_password" id="confirm_password" class="form_style" placeholder="Confirma tu contraseña" required>
+                </div>
+                <button type="submit" class="btn66">Registrarse</button>
+                <p>Al hacer clic en "Registrarse", aceptas nuestros <a href="./terminos.html">Términos y Condiciones</a>.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <span>
+                    <a href="./index.html">
+                        <img src="./img/logo.png" alt="Logo de AMBUSOS" width="100px">
+                    </a>
+                </span>
+            </div>
+            <div class="box">
+                <h2>Sobre Nosotros</h2>
+                <p>Ambusos: tu aliado en emergencias. Brindamos atención médica rápida y confiable cuando más lo necesitas.</p>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 AMBUSOS - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+    <script>
+        // Validación con JavaScript antes de enviar el formulario
+        document.getElementById("registerForm").onsubmit = function (event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden. Por favor, intenta de nuevo.");
+                event.preventDefault();  // Evitar el envío del formulario
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Personal - AMBUSOS</title>
+    <link rel="stylesheet" href="../css/tablas.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <!------------------------------------------------- Header ---------------------------------------------------->
+
+  <header class="header">
+    <div class="topheader">
+        <div class="wrapper">
+            </div>
+            <nav>
+                <a onclick="location.href='../tipo_de_persona.html'"><i class="fa-regular fa-user"></i> Inicia
+                    sesion</button>
+            </nav>
+        </div>
+    </div>
+
+    
+    <div class="wrapper">
+        <div class="logo">
+            <a onclick="location.href='../index.html'"> <img src="../img/logo_2.png" width="300px"></a>
+        </div>
+        <nav>
+            <a href="../index.html"></i>Inicio</a>
+            <a href="../mapa_de_usuario.html">Mapa</a>
+            <a href="../apartados_ambu.html">Otros</a>
+        </nav>
+    </div>
+</header>
+<!---------------------------------------------------------------------------------------------------------->
+
+<div class="texto-central">
+    <h1>Gestión de Ambulancias</h1>
+</div>
+
+<section class="container">
+    <h4>Lista de Ambulancias</h4>
+    <table id="ambulanceTable" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Disponibilidad</th>
+                <th>Estado</th>
+                <th>Conductor</th>
+                <th>Total de recorridos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="editable">ABC123</td>
+                <td class="editable">Disponible</td>
+                <td class="editable">Operativo</td>
+                <td class="editable">Juan Pérez</td>
+                <td class="editable">50</td>
+                <td>
+                    <button class="btn btn-primary btn-edit">Editar</button>
+                    <button class="button88 btn-danger btn-delete">
+                        <svg viewBox="0 0 448 512" class="svgIcon">
+                            <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
+                        </svg>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btnAdd" class="btn btn-success">Agregar</button>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const table = document.getElementById('ambulanceTable').getElementsByTagName('tbody')[0];
+        const btnAdd = document.getElementById('btnAdd');
+
+        // Obtén el parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const role = urlParams.get('role');
+
+        // Ajusta la visibilidad de los botones según el rol
+        function showAdminFeatures(isAdmin) {
+            document.querySelectorAll('.btn-delete').forEach(button => {
+                button.style.display = isAdmin ? "inline-block" : "none";
+            });
+        }
+
+        // Verifica el rol y muestra las características correspondientes
+        if (role === 'admin') {
+            showAdminFeatures(true);
+        } else if (role === 'supervisor') {
+            showAdminFeatures(false);
+        }
+
+        // Añadir eventos a las filas existentes y nuevas
+        function addEventListeners() {
+            document.querySelectorAll('.btn-edit').forEach(button => {
+                button.addEventListener('click', editRow);
+            });
+
+            document.querySelectorAll('.btn-delete').forEach(button => {
+                button.addEventListener('click', deleteRow);
+            });
+        }
+
+        addEventListeners(); // Llama para la fila inicial
+
+        btnAdd.addEventListener('click', function () {
+            const newRow = table.insertRow();
+
+            const cellId = newRow.insertCell(0);
+            const cellPlate = newRow.insertCell(1);
+            const cellAvailability = newRow.insertCell(2);
+            const cellStatus = newRow.insertCell(3);
+            const cellDriver = newRow.insertCell(4);
+            const cellTrips = newRow.insertCell(5);
+            const cellActions = newRow.insertCell(6);
+
+            const newId = table.rows.length;
+            cellId.innerHTML = newId;
+            cellPlate.classList.add('editable');
+            cellAvailability.classList.add('editable');
+            cellStatus.classList.add('editable');
+            cellDriver.classList.add('editable');
+            cellTrips.classList.add('editable');
+
+            cellActions.innerHTML = `
+                <button class="btn btn-primary btn-edit">Editar</button>
+                <button class="button88 btn-danger btn-delete" style="display: ${role === 'admin' ? 'inline-block' : 'none'};">
+                    <svg viewBox="0 0 448 512" class="svgIcon">
+                        <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
+                    </svg>
+                </button>
+            `;
+
+            addEventListeners(); // Añadir eventos a la nueva fila
+        });
+
+        function editRow() {
+            const row = this.closest('tr');
+            const cellsToEdit = row.querySelectorAll('.editable');
+
+            if (this.textContent === 'Editar') {
+                cellsToEdit.forEach(cell => cell.setAttribute('contenteditable', 'true'));
+                this.textContent = 'Guardar';
+            } else {
+                if (validateRow(row)) {
+                    cellsToEdit.forEach(cell => cell.setAttribute('contenteditable', 'false'));
+                    this.textContent = 'Editar';
+                    alert('Cambios guardados en la fila con ID: ' + row.cells[0].innerText);
+                } else {
+                    alert('No se pueden guardar campos vacíos.');
+                }
+            }
+        }
+
+        function validateRow(row) {
+            return Array.from(row.querySelectorAll('.editable')).every(cell => cell.textContent.trim() !== '');
+        }
+
+        function deleteRow() {
+            const row = this.closest('tr');
+            row.remove();
+            updateRowIds();
+        }
+
+        function updateRowIds() {
+            const rows = table.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].cells[0].innerText = i + 1;
+            }
+        }
+    });
+</script>
+ <!------------------------------- Footer - pie de pagina --------------------------------------------------->
+
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <span>
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="Logo de Liber-Arte" width="100px">
+                </a>
+            </span>
+        </div>
+        <div class="box">
+            <h2>-SOBRE NOSOTROS</h2>
+            <p>Ambusos: tu aliado en emergencias. Brindamos atención médica rápida y confiable cuando más lo necesitas </p>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>AMBUSOS</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+
+<!------------------------------- Footer - pie de pagina --------------------------------------------------->
+
+</body>
+
+</html>

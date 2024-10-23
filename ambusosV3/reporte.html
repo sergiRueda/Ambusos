@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Reporte de Conductor</title>
+    <link rel="stylesheet" href="./css/formularios.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="logo">
+                <a href="index.html"><img src="./img/logo_2.png" width="300px"></a>
+            </div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="mapa_conductor.html">Mapa</a>
+                <a href="reporte.html">Reporte</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Fin Header -->
+    <div class="container">
+        <div class="form_area">
+            <p class="title">Generar Reporte de Conductor</p>
+            <form id="reporteForm">
+                <div class="form_group">
+                    <label class="sub_title" for="conductor">Nombre del Conductor:</label>
+                    <input class="form_style" type="text" name="conductor" id="conductor" placeholder="Nombre del Conductor" required>
+                </div>
+    
+                <div class="form_group">
+                    <label class="sub_title" for="ambulancia">Ambulancia (ID o Placa):</label>
+                    <input class="form_style" type="text" name="ambulancia" id="ambulancia" placeholder="ID o Placa de la Ambulancia" required>
+                </div>
+    
+                <div class="form_group">
+                    <label class="sub_title" for="fecha">Fecha:</label>
+                    <input class="form_style" type="date" name="fecha" id="fecha" required>
+                </div>
+    
+                <div class="form_group">
+                    <label class="sub_title" for="descripcion">Descripción del Incidente o Situación:</label>
+                    <textarea class="form_style" name="descripcion" id="descripcion" placeholder="Describa el incidente o situación" rows="5" required></textarea>
+                </div>
+    
+                <div>
+                    <button class="btn66" type="submit">Enviar Reporte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <span>
+                    <a href="index.html">
+                        <img src="./img/logo.png" alt="Logo de Liber-Arte" width="100px">
+                    </a>
+                </span>
+            </div>
+            <div class="box">
+                <h2>-SOBRE NOSOTROS</h2>
+                <p>Ambusos: tu aliado en emergencias. Brindamos atención médica rápida y confiable cuando más lo necesitas</p>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>AMBUSOS</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <!-- Fin Footer -->
+
+    <script>
+        document.getElementById('reporteForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que se envíe el formulario inmediatamente
+
+            // Aquí puedes agregar lógica para enviar los datos a través de AJAX si es necesario.
+
+            // Mostrar mensaje de agradecimiento
+            alert('Gracias por tu reporte. ¡Se ha enviado correctamente!');
+
+            // Redirigir después del mensaje
+            window.location.href = 'index.html';  // Redirige a la página que desees
+        });
+    </script>
+</body>
+
+</html>

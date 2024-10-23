@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0 0;
+  background: linear-gradient(150deg, #F4F9F3,#A3E4D7);
+  font-family: 'Poppins', sans-serif;
+  display: block;
+}
+form {
+  width: 450px;
+  margin: auto;
+  padding: 10px 30px;
+
+  
+}
+.inicio h2 {
+  color: #fff;
+  text-align: center;
+  margin: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  
+}
+.datos, textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  box-sizing: 17px;
+  border: none;
+}
+textarea {
+  min-width: 100px;
+  max-height: 200px;
+  max-width: 100%;
+}
+.formulario h2 {
+  font-size: 2em;
+  color: #Ffff;
+  text-align: center;
+}
+.sumid {
+  font-size: 1.2em;
+  background: #ffffff;
+  color: #A3E4D7;
+  padding: 20px;
+  border: none;
+  border-radius: 40px;
+  padding:20px 60px;
+ margin-left: 25%;
+ font-weight: bold;
+ 
+}
+#boton:hover {
+  cursor: pointer;
+}
+@media (max-width:480px) {
+  form{
+    width: 100%;
+  }
+}
+.inicio {
+  padding: 20px;
+}
+.formulario{
+  background-color: #A3E4D7;
+  margin-top: -100px;
+}
+@media (max-width:900px) {
+  .formulario{
+    margin-top: -20px;
+  }
+}
+main img{
+  width: 500px;
+  height: 500px;
+}
+.imagen {
+  float: right;
+  margin: auto;
+  margin-right: 20%;
+  padding: 50px 0px;
+  width: 400px; 
+  height: 440px;
+  
+}
+@media screen and (max-width: 900px) {
+  .imagen{
+ margin-right: 0%;
+ padding: 50px 100px;
+height: 300px;
+float: right;
+max-width: 100%;
+float: right;
+  }
+}
+@media screen and (max-width: 900px) {
+  main img{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.botonw {
+font-size: 2em;
+ float: left;
+ text-align: center;
+ margin-top: 20px;
+ width: 40%;
+ height: 300px;
+ left: 50%;
+ top: 50%;
+ text-transform:capitalize;
+ transform: translateX(-100%) translateY(-30%);
+ position:absolute;
+ line-height:1;
+ 
+ 
+}
+@media screen and (max-width: 900px) {
+  .botonw{
+    font-size: 1em;
+    transform: translateX(-120%) translateY(-100px);
+  }
+}
+
+.servicoc {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  line-height: 20px;
+  
+}
+main a{
+  display: inline-block;
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 8px 15px;
+  line-height:normal;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #A3E4D7;
+  border-radius: 20px;
+  
+} 
+
+
+/*------------------------------------------------------header--------------------------------------------------------------------*/
+header {
+  width:100%; /* Establecemos que el header abarque el 100% del documento */
+  overflow:hidden; /* Eliminamos errores de float */
+  background:#F4F9F3;
+  margin-bottom:20px;
+  z-index: 10000000000;
+  	
+}
+.wrapper {
+  width:90%; /* Establecemos que el ancho sera del 90% */
+  max-width:90%; /* Aqui le decimos que el ancho máximo sera de 90% */
+  margin:auto; /* Centramos los elementos */
+  overflow:hidden; /* Eliminamos errores de float */
+}
+header .logo {
+  float:left;
+  cursor:pointer; cursor: hand	
+}
+header nav {
+  float:right;
+  line-height: 100px;
+  cursor:pointer; cursor: hand	
+}
+header nav a{
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  padding: 8px 15px;
+  line-height:normal;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition:all 500ms ease ;
+  -o-transition:all 500ms ease ;
+  transition:all 500ms ease ;
+} 
+header nav a:hover {
+  background: #A3E4D7;
+  border-radius: 40px;
+}
+@media screen and (max-width: 900px) {
+  header .logo,
+  header nav {
+  width:100%;
+  text-align:center;
+  line-height: 45px; 
+  }
+}
+.topheader {
+  width:100%; /* Establecemos que el header abarque el 100% del documento */
+  overflow:hidden; /* Eliminamos errores de float */
+  margin-bottom:5px;
+  line-height: 25px; 
+  background:#A3E4D7;
+  
+}
+.topheader .telefono {
+  float:left;
+  cursor:pointer; cursor: hand	
+} 
+.topheader nav {
+  float:right;
+    line-height: 10px;
+    cursor:pointer; cursor: hand	
+  } 
+  .topheader nav a{
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    padding: 1px 15px;
+    line-height:normal;
+    font-size: 15px;
+    font-weight: lighter;
+  } 
+  @media screen and (max-width: 900px) {
+    .topheader .telefono,
+    .topheader nav {
+    width:100%;
+    text-align:center;
+    line-height: 20px; 
+    }
+  }
+
+
+
+
+/*--------------------------------------------------- Pagina principal-----------------------------------------------------------------*/
+
+  .container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/*--------------------------------------------------- footer-----------------------------------------------------------------*/
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
+    background-color: #bed1ca;
+  }
+  .pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+  }
+  .pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+  }
+  .pie-pagina .grupo-1 .box h2{
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  .pie-pagina .grupo-1 .box p{
+    color:#000;
+    margin-bottom: 10px;
+  }
+  .pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #000;
+    margin-right: 10px;
+    background-color: #F4F9F3;
+    text-align: center;
+    transition: all 300ms ease;
+  }
+  .pie-pagina .grupo-1 .red-social a:hover{
+    color: #A3E4D7;
+  }
+  .pie-pagina .grupo-2{
+    background-color: #A3E4D7;
+    padding: 1px 10px;
+    text-align: center;
+    color: #fff;
+  }
+  .pie-pagina .grupo-2 small{
+    font-size: 15px;
+  }
+  @media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+  }

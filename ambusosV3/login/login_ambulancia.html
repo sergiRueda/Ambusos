@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección al CRUD - AMBUSOS</title>
+    <link rel="stylesheet" href="../css/Formularios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script>
+        // Redirigir al cargar la página
+        window.onload = function() {
+            // Asegúrate de que esta URL sea la correcta para acceder a la vista del CRUD
+            window.location.href = "../php/vista/ambulancia_vista.php";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="topheader">
+            <div class="wrapper"></div>
+            <nav>
+                <a href="../index.html"><i class="fa-regular fa-user"></i> Inicio</a>
+            </nav>
+        </div>
+
+        <div class="wrapper">
+            <div class="logo">
+                <a href="../index.html"> <img src="../img/logo_2.png" width="300px"></a>
+            </div>
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="../mapa_de_usuario.html">Mapa</a>
+                <a href="../apartados_ambu.html">Otros</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form_area">
+            <p class="title">Redirigiendo...</p>
+            <p>Por favor, espere mientras lo redirigimos al área de gestión de ambulancias.</p>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <span>
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="Logo de Liber-Arte" width="100px">
+                    </a>
+                </span>
+            </div>
+            <div class="box">
+                <h2>-SOBRE NOSOTROS</h2>
+                <p>Ambusos: tu aliado en emergencias. Brindamos atención médica rápida y confiable cuando más lo necesitas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>AMBUSOS</b> - Todos los Derechos Reservados.</small>
+    </div>
+</body>
+
+</html>

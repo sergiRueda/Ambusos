@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBUSOS</title>
+    <link rel="stylesheet" href="./css/formularios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css">
+    <!-- es el glider-js que nos ayuda a hacer el carousel  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+<!-- Header -->
+
+    <header class="header">
+        <div class="topheader">
+            <div class="wrapper">
+                </div>
+                <nav>
+                    <a onclick="location.href='./tipo_de_persona.html'"><i class="fa-regular fa-user"></i> Inicia
+                        sesion</button>
+                </nav>
+            </div>
+        </div>
+
+        
+        <div class="wrapper">
+            <div class="logo">
+                <a onclick="location.href='./index.html'"> <img src="./img/logo_2.png" width="300px"></a>
+            </div>
+            <nav>
+                <a href="./index.html"></i>Inicio</a>
+                <a href="./mapa_de_usuario.html">Mapa</a>
+                <a href="./apartados_ambu.html">Otros</a>
+            </nav>
+        </div>
+    </header>
+    <!--     fin header         -->
+
+    <!-- Formulario nuevo con los campos del formulario antiguo -->
+<div class="container">
+    <div class="form_area">
+        <p class="title">SIGN UP</p>
+        <form action="tabla_auxilio.html" method="get">
+            <!-- Campo Nombre -->
+            <div class="form_group">
+                <label class="sub_title" for="nombres">Nombre</label>
+                <input placeholder="Ingresa tu nombre" class="form_style" type="text" name="nombres" id="nombres" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñüÜ\s]+" required>
+            </div>
+
+            <!-- Campo Apellido -->
+            <div class="form_group">
+                <label class="sub_title" for="apellidos">Apellido</label>
+                <input placeholder="Ingresa tu apellido" class="form_style" type="text" name="apellidos" id="apellidos" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñüÜ\s]+" required>
+            </div>
+
+            <!-- Campo Documento -->
+            <div class="form_group">
+                <label class="sub_title" for="documento">Número de documento</label>
+                <input placeholder="Número de documento" class="form_style" type="text" name="documento" id="documento" maxlength="10" pattern="\d{10}" required>
+            </div>
+
+            <!-- Campo Género -->
+            <div class="form_group">
+                <label class="sub_title" for="genero">Género</label>
+                <select class="form_style" name="genero" id="genero" required>
+                    <option value="" disabled selected>Selecciona tu género</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <!-- Campo Estado Civil -->
+            <div class="form_group">
+                <label class="sub_title" for="estado">Estado Civil</label>
+                <select class="form_style" name="estado" id="estado" required>
+                    <option value="" disabled selected>Selecciona tu estado</option>
+                    <option value="soltero">Soltero</option>
+                    <option value="casado">Casado</option>
+                    <option value="divorciado">Divorciado</option>
+                    <option value="viudo">Viudo</option>
+                </select>
+            </div>
+
+            <!-- Campo Seguro Médico -->
+            <div class="form_group">
+                <label class="sub_title" for="seguro">¿Tienes seguro médico?</label>
+                <select class="form_style" name="seguro" id="seguro" required>
+                    <option value="" disabled selected>Seguro médico</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Campo Condición -->
+            <div class="form_group">
+                <label class="sub_title" for="condicion">Condición</label>
+                <select class="form_style" name="condicion" id="condicion" required>
+                    <option value="" disabled selected>Selecciona tu condición</option>
+                    <option value="estable">Estable</option>
+                    <option value="crítico">Crítico</option>
+                    <option value="inconsciente">Inconsciente</option>
+                </select>
+            </div>
+
+            <!-- Campo Edad -->
+            <div class="form_group">
+                <label class="sub_title" for="edad">Edad</label>
+                <input placeholder="Ingresa tu edad" class="form_style" type="number" name="edad" id="edad" required>
+            </div>
+
+            <!-- Campo Ubicación -->
+            <div class="form_group">
+                <label class="sub_title" for="ubicacion">Ubicación</label>
+                <input placeholder="Ingresa tu ubicación" class="form_style" type="text" name="ubicacion" id="ubicacion" required>
+            </div>
+
+            <!-- Botón de envío -->
+            <div>
+                <button class="btn66" type="submit">Auxilio</button>
+                <p class="terminos">Al hacer clic en "Auxilio", aceptas nuestros <a class="link" href="./terminos.html">Términos y Condiciones</a>.</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer - pie de pagina -->
+
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <span>
+                <a href="./index.html">
+                    <img src="./img/logo.png" alt="Logo de Liber-Arte" width="100px">
+                </a>
+            </span>
+        </div>
+        <div class="box">
+            <h2>-SOBRE NOSOTROS</h2>
+            <p>Ambusos: tu aliado en emergencias. Brindamos atención médica rápida y confiable cuando más lo necesitas </p>
+        </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>AMBUSOS</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+</body>
+
+
+</html>
